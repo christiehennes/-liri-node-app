@@ -2,7 +2,7 @@ require("dotenv").config();
 const keys = require('./keys.js');
 const $ = (require('jquery'));
 
-debug = 1
+debug = 0;
 
 
 //Initalize Twitter
@@ -47,7 +47,25 @@ switch (command){
             if (err) {
             return console.log('Error occurred: ' + err);
             }
-            console.log(data);
+            // console.log(JSON.stringify(data, null, " "));
+
+            let songInfo = data.tracks.items[0];
+            if(debug){console.log(JSON.stringify(songInfo, null, " "))};
+
+
+            console.log(
+                `
+                Artist(s): ${songInfo.artists[0].name}
+                Song Name: ${songInfo.name}
+                Preview Link: ${songInfo.preview_url}
+                Album: ${songInfo.album.name}
+                `
+            )
+
+
+
+
+
         });
         break;
 
