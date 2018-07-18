@@ -1,5 +1,6 @@
 require("dotenv").config();
 const keys = require('./keys.js');
+const $ = (require('jquery'));
 
 debug = 1
 
@@ -55,13 +56,21 @@ switch (command){
     request('http://www.omdbapi.com/?t=' + arg + '&y=&plot=short&apikey=d7c89213', function(error, response, body) {
 
         // If the request is successful (i.e. if the response status code is 200)
-
-        console.log(body);
         if (!error && response.statusCode === 200) {
       
           // Parse the body of the site and recover just the imdbRating
           // (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
-          console.log("The movie's rating is: " + JSON.parse(body).imdbRating);
+          console.log(`
+          Title: ${JSON.parse(body).Title}
+          Year: ${JSON.parse(body).Year}
+          IMDB Rating: ${JSON.parse(body).Ratings[0].Value}
+          Rotten Tomatoes Rating: ${JSON.parse(body).Ratings[1].Value}
+          Country: ${JSON.parse(body).Country}
+          Language: ${JSON.parse(body).Language}
+          Plot: ${JSON.parse(body).Plot}
+          Actors: ${JSON.parse(body).Actors}
+          `);
+
         }
       });
         break;
