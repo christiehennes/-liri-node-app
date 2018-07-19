@@ -21,6 +21,7 @@
     "fs": "0.0.1-security",
     "jquery": "^3.3.1",
     "node-spotify-api": "^1.0.7",
+    "npm": "^6.2.0",
     "passport-twitter": "^1.0.4",
     "require": "^2.4.20",
     "twitter": "^1.7.1"
