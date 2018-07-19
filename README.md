@@ -29,7 +29,8 @@ This will do whatever command is listed in random.txt
 
 ## .env format 
 
-```# Spotify API keys
+```
+# Spotify API keys
 
 SPOTIFY_ID=enterID
 SPOTIFY_SECRET=enterSecret
@@ -39,4 +40,5 @@ SPOTIFY_SECRET=enterSecret
 TWITTER_CONSUMER_KEY=enterConsumerKey
 TWITTER_CONSUMER_SECRET=enterSecretKey
 TWITTER_ACCESS_TOKEN_KEY=enterToken
-TWITTER_ACCESS_TOKEN_SECRET=enterSecret```
+TWITTER_ACCESS_TOKEN_SECRET=enterSecret
+```
